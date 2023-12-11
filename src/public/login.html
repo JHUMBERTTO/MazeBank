@@ -26,6 +26,26 @@
           <a class="button white" href="signup.html">Singup</a>
         </div>
       </section>
+      <script>
+        $("#button").click(async () => {
+          const email = $("#email").val();
+          const password = $("#password").val();
+
+          $.ajax({
+            type:"POST",
+            url: "/api/login",
+            data:{email, password},
+            success: function(response){
+              window.location.href = `/detail.html?id=${response.user.postgresUserId}`;
+            },
+            error: function(error){
+              console.error(error);
+              alert("Incorrect email or password")
+            }
+
+          })
+        });
+      </script>
     </div>
   </body>
 </html>
