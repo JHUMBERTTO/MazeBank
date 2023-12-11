@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup - Maze Bank</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <div class="bank-container">
+      <header class="bank-header">
+        <a href="index.html">
+          <img src="./img/logo.jpg" alt="Maze Bank Logo" class="logo" />
+        </a>
+      </header>
+      <section class="form-section">
+        <h1>Signup</h1>
+        <div id="signup-form">
+          <input type="email" id="email" name="email" placeholder="Email" required>
+          <input type="password" id="password" name="password" placeholder="Password" required>
+          <input type="text" id="name" name="name" placeholder="Name" required>
+          <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+          <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+          <button type="button" id="button">Register</button>
+          <a href="login.html" class="button white">Login</a>
+        </div>
+      </section>
+      <script>
+        $("#button").click(async () => {
+
+          const email = $("#email").val();
+          const password = $("#password").val();
+          const name = $("#name").val();
+          const lastname = $("#lastname").val();
+          const phone = $("#phone").val();
+          
+          
+          //validate if the content isnt null
+          if (!email || !password || !name || !lastname || !phone) {
+            alert("Please full all the inputs ");
+            return;
+          }
+    
+          console.log("index.html",email, password, name,  lastname, phone)
+          $.ajax({
+            type: "POST",
+            url: "/api/signup", // rute
+            data: { email, password, name,  lastname, phone },
+            success: function (response) {
+              window.location.href = "/login.html";
+            },
+            error: function (error) {
+              console.error(error);
+            }
+          });
+        });
+      </script>
+    </div>
+  </body>
+</html>

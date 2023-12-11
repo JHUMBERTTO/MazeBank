@@ -1,7 +1,8 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('account', {
+export default function (sequelize, DataTypes) {
+  const account =  sequelize.define(
+    'account', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -33,4 +34,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+  return account;
 };

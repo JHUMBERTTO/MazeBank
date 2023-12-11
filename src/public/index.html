@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze Bank</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous">
+  </script>
+</head>
+<body>
+  <div class="bank-container">
+    <header class="bank-header">
+      <a href="index.html">
+        <img src="./img/logo.jpg" alt="Maze Bank Logo" class="logo" />
+      </a>
+    </header>
+    <section class="welcome-section">
+      <h1>Welcome</h1>
+      <a href="login.html" class="button">Login</a>
+    </section>
+  </div>
+  <script>
+    $("#button").click(async () => {
+      const name = $("#name").val();
+      const pwd = $("#password").val();
+
+      const response = await $.ajax({
+        type: "GET",
+        url: "/index",
+        data: { username: name, password: pwd },
+      });
+
+      console.log(response);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+a:link { text-decoration: none; }
+
+.volver{
+  margin-top: 20px;
+  font-size: 16px;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.volver:hover{
+  color: red; 
+}
+
+.bank-container {
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bank-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  border-bottom: 3px solid red;
+}
+
+.logo {
+  width: 150px;
+}
+
+.welcome-section {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.welcome-section h1 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+}
+
+.welcome-section p {
+  color: #555;
+  font-size: 18px;
+}
+
+.welcome-section button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.welcome-section button:hover {
+  background-color: darkred;
+}
+
+.form-section,
+.details-section {
+  background: #fff;
+  padding: 20px;
+  margin-top: 50px; /* to push down from the fixed header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 300px; /* fixed width for forms */
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button,
+a.button {
+  display: block;
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.button.white,
+button.white {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  color: black;
+  display: block;
+}
+
+.detail {
+  text-align: left;
+  margin: 10px 0;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.value {
+  color: #555;
+}
+
+/* ... Existing styles ... */
+
+.transactions-section {
+  background: #fff;
+  padding: 20px;
+  margin-top: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: auto;
+  text-align: center;
+}
+
+.transactions-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.transactions-table thead {
+  background-color: #f2f2f2;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.transactions-table th {
+  position: sticky;
+  top: 0;
+  background-color: #f2f2f2;
+}
+
+.transactions-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* ... Any additional styles ... */

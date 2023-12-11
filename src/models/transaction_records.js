@@ -1,7 +1,8 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('transaction_records', {
+export default function(sequelize, DataTypes) {
+  const transaction_records = sequelize.define(
+    'transaction_records', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -45,4 +46,6 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
+
+  return transaction_records;
 };
